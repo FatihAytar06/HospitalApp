@@ -11,9 +11,10 @@
         android:layout_width="411dp"
         android:layout_height="433dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/GirisEkraniImage"
+        app:srcCompat="@drawable/girisekranimage"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -21,7 +22,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/emailrectangle"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="504dp" />
+        tools:layout_editor_absoluteY="504dp"
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -29,7 +31,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/emailrectangle"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="605dp" />
+        tools:layout_editor_absoluteY="605dp"
+        tools:ignore="MissingConstraints"/>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -37,7 +40,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/emailicon"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="471dp" />
+        tools:layout_editor_absoluteY="471dp"
+        tools:ignore="MissingConstraints"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -45,7 +49,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/passwordicon"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="573dp" />
+        tools:layout_editor_absoluteY="573dp"
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/emailId"
@@ -53,7 +58,8 @@
         android:layout_height="wrap_content"
         android:text="Email"
         tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="471dp" />
+        tools:layout_editor_absoluteY="471dp"
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/emailId2"
@@ -61,14 +67,16 @@
         android:layout_height="wrap_content"
         android:text="Password"
         tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="578dp" />
+        tools:layout_editor_absoluteY="578dp"
+        tools:ignore="MissingConstraints"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Sign In"
         android:background="@drawable/signinbtn"
         tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="664dp" />
+        tools:layout_editor_absoluteY="664dp"
+        tools:ignore="MissingConstraints"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
