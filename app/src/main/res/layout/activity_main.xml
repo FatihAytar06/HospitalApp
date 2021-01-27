@@ -8,75 +8,93 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="411dp"
-        android:layout_height="433dp"
+        android:layout_width="0dp"
+        android:layout_height="322dp"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/girisekranimage"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/emailrectangle"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="504dp"
-        tools:ignore="MissingConstraints"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/makeanappointmentBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mainactivtybuttons"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Make An appoıntment"
+        android:onClick="MakeAnAppointment"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/myappointmentBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/emailrectangle"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="605dp"
-        tools:ignore="MissingConstraints"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myappointmentBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mainactivtybuttons"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="My Appoıntments"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/makeanappointmentBtn"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/emailicon"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="471dp"
-        tools:ignore="MissingConstraints"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/AccountBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mainactivtybuttons"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Account"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AskQuestionBtn"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/passwordicon"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="573dp"
-        tools:ignore="MissingConstraints"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/AskQuestionBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/mainactivtybuttons"
+        android:onClick="AskQuestion"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="ask questIon"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myappointmentBtn"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/emailId"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/exitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="471dp"
-        tools:ignore="MissingConstraints"/>
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/mainactivtybuttons"
+        android:onClick="Exit"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="exıt"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/emailId2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="578dp"
-        tools:ignore="MissingConstraints"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:background="@drawable/signinbtn"
-        tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="664dp"
-        tools:ignore="MissingConstraints"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
