@@ -58,6 +58,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="Account"
+        android:onClick="GoAccountInfo"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

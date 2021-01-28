@@ -21,14 +21,12 @@ public class MainActivity extends AppCompatActivity {
     public void MakeAnAppointment(View view){
         Intent intent = new Intent(MainActivity.this, FeedActivity.class);
         startActivity(intent);
-        finish();
 
     }
 
     public void AskQuestion(View view){
         Intent intent = new Intent(MainActivity.this, PickDoctor.class);
         startActivity(intent);
-        finish();
     }
 
     public void Exit(View view){
@@ -36,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, LogInScreen.class);
         startActivity(intent);
         finish();
+
+    }
+    public void GoAccountInfo(View view){
+
+        Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+        startActivity(intent);
 
     }
 }
