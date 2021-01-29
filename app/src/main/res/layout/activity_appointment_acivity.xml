@@ -6,21 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".AppointmentAcivity">
 
-    <CalendarView
-        android:id="@+id/simpleCalendarView"
+    <TextView
+        android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="59dp" />
-
-    <Button
-        android:id="@+id/appointmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="MakeAppointment"
-        android:text="Make an Appoıntment"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="641dp" />
-
+        android:hint="Date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
