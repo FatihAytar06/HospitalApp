@@ -100,6 +100,12 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
     public void loadMessage(){
         reference.child("messages").child(userName).child(otherName).addChildEventListener(new ChildEventListener() {
             @Override

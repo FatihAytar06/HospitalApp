@@ -12,15 +12,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     Dialog epicDialog;
-    Button closeButton, appointmentBtn;
-    CalendarView calendarView;
-    String date;
+
+    private FirebaseDatabase firebaseDatabase;
+    DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,35 +38,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         firebaseAuth = FirebaseAuth.getInstance();
         epicDialog = new Dialog(this);
+
+
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reference = firebaseDatabase.getReference();
+
     }
     public void MakeAnAppointment(View view){
-        epicDialog.setContentView(R.layout.level_interface);
-        closeButton = epicDialog.findViewById(R.id.closeButton);
-        appointmentBtn = epicDialog.findViewById(R.id.appointmentButton);
-        calendarView = epicDialog.findViewById(R.id.calendarView);
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                epicDialog.cancel();
-            }
-        });
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                date = dayOfMonth + "/" + (month+1) + "/" + year ;
-            }
-        });
-        appointmentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AppointmentAcivity.class);
-                intent.putExtra("date", date);
-                startActivity(intent);
-            }
-        });
-      epicDialog.setCancelable(false);
-      epicDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-      epicDialog.show();
+        Intent intent = new Intent(MainActivity.this,FeedActivity.class);
+        startActivity(intent);
+
     }
 
     public void AskQuestion(View view){

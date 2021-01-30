@@ -33,9 +33,6 @@ public class MessageDoctorAdapter extends RecyclerView.Adapter<MessageDoctorAdap
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     String email = firebaseUser.getEmail();
-    String citizenID;
-
-
 
     public MessageDoctorAdapter(List<String> doctorNameList, Context context, Activity activity) {
         this.doctorNameList = doctorNameList;
