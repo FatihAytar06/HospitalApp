@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,8 +35,8 @@ public class SignUp extends AppCompatActivity {
     }
     private void Define(){
         userNameTextView=findViewById(R.id.userNameText);
-        EmailText = findViewById(R.id.signUpEmailTextView);
-        Password = findViewById(R.id.signUpPasswordTextView);
+        EmailText = findViewById(R.id.signUpDoctorEmailTextView);
+        Password = findViewById(R.id.signUpDoctorPasswordTextView);
         BackButton = findViewById(R.id.backButton);
         RegisterButton = findViewById(R.id.registerButton);
 

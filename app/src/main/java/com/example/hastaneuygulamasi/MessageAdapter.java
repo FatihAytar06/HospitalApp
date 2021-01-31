@@ -71,6 +71,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     @Override
     public int getItemViewType(int position) {
+
         if (messageModelList.get(position).getFrom().equals(userName)) {
             state=true;
             return view_send;

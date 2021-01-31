@@ -36,17 +36,21 @@ public class ChatActivity extends AppCompatActivity {
     RecyclerView chatRecyclerView;
     MessageAdapter messageAdapter;
     List<MessageModel> list;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        intent=getIntent();
+        userName=intent.getStringExtra("username");
+        System.out.println("user:"+userName);
+        otherName=intent.getStringExtra("othername");
         define();
         loadMessage();
     }
     public void define(){
         list=new ArrayList<>();
-        userName=getIntent().getStringExtra("username");
-        otherName=getIntent().getStringExtra("othername");
+
         chatUserName=(TextView)findViewById(R.id.chatUserName);
         chatEditText=(EditText)findViewById(R.id.chatEditText);
         sendImage=(ImageView)findViewById(R.id.sendImage);
@@ -55,9 +59,10 @@ public class ChatActivity extends AppCompatActivity {
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChatActivity.this,PickDoctor.class);
+                Intent intent = new Intent(ChatActivity.this,MainActivity.class);
                 intent.putExtra("kadi",userName);
                 startActivity(intent);
+                finish();
             }
         });
         firebaseDatabase=FirebaseDatabase.getInstance();

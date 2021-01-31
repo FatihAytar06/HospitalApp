@@ -39,8 +39,8 @@ public class LogInScreen extends AppCompatActivity {
          */
     }
     public void define(){
-        emailTextView = findViewById(R.id.signUpEmailTextView);
-        passwordTextView = findViewById(R.id.signUpPasswordTextView);
+        emailTextView = findViewById(R.id.signUpDoctorEmailTextView);
+        passwordTextView = findViewById(R.id.signUpDoctorPasswordTextView);
         signInButton=findViewById(R.id.signInButton);
         signUpButton = findViewById(R.id.signUpButton);
         firebaseDatabase= FirebaseDatabase.getInstance();
@@ -52,6 +52,12 @@ public class LogInScreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+    }
+    public void DoctorLogIn(View view){
+    Intent intent = new Intent(LogInScreen.this,DoctorLogInActivity.class);
+    startActivity(intent);
+
+
     }
     public void SignIn(View view){
         String email=emailTextView.getText().toString();

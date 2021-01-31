@@ -163,7 +163,7 @@ public class AppointmentAcivity extends AppCompatActivity {
         reference.child("doctors").child(doctorname).child("Appointments").child("Date").child(date).child(selectedHour).setValue(userName).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                reference.child("users").child(userName).child("Appointments").child("Date").child(selectedHour).setValue(doctorname);
+                reference.child("users").child(userName).child("Appointments").child("Date").child(date).child(selectedHour).setValue(doctorname);
 
 
 

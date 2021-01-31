@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".AppointmentAcivity"></activity>
+        <activity android:name=".PickPatient"></activity>
+        <activity android:name=".DoctorAppointments" />
+        <activity android:name=".DoctorMainActivity" />
+        <activity android:name=".DoctorLogInActivity" />
+        <activity android:name=".MyAppointmentsActivity" />
+        <activity android:name=".AppointmentAcivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".PickDoctor" />
         <activity android:name=".ChatActivity" />

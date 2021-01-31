@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void MyAppointments(View view){
+        Intent intent = new Intent(MainActivity.this,MyAppointmentsActivity.class);
+        startActivity(intent);
+
+    }
 
     public void AskQuestion(View view){
         Intent intent = new Intent(MainActivity.this, PickDoctor.class);
