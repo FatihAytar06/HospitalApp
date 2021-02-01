@@ -50,66 +50,71 @@ public class DoctorLogInActivity extends AppCompatActivity {
     public void SignInDoctor(View view){
         String doctorname=doctorNameTextView.getText().toString();
         String password=passwordTextView.getText().toString();
-        reference.child("doctors").addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot datasnapshot, @Nullable String previousChildName) {
-                String getname = datasnapshot.getKey();
-                if(doctorname.equals(getname)){
-                    reference.child("doctors").child(doctorname).addChildEventListener(new ChildEventListener() {
-                        @Override
-                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                            if(snapshot.getKey().equals("Staff ID")&&snapshot.getValue().toString().equals(password)){
-                                Intent intent = new Intent(DoctorLogInActivity.this,DoctorMainActivity.class);
-                                intent.putExtra("doctorname",doctorname);
-                                startActivity(intent);
-                                finish();
+        if(!doctorname.equals("")&&!password.equals("")){
+            reference.child("doctors").addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot datasnapshot, @Nullable String previousChildName) {
+                    String getname = datasnapshot.getKey();
+                    if(doctorname.equals(getname)){
+                        reference.child("doctors").child(doctorname).addChildEventListener(new ChildEventListener() {
+                            @Override
+                            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                                if(snapshot.getKey().equals("Staff ID")&&snapshot.getValue().toString().equals(password)){
+                                    Intent intent = new Intent(DoctorLogInActivity.this,DoctorMainActivity.class);
+                                    intent.putExtra("doctorname",doctorname);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                            @Override
+                            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-                        }
+                            }
 
-                        @Override
-                        public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                            @Override
+                            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
 
-                        }
+                            }
 
-                        @Override
-                        public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                            @Override
+                            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-                        }
+                            }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
+                            }
+                        });
+                    }
+
                 }
 
-            }
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                }
 
-            }
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot snapshot) {
 
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                }
 
-            }
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+        }
+        else
+            Toast.makeText(DoctorLogInActivity.this,"Please Fill the Blanks...",Toast.LENGTH_LONG).show();
 
-            }
-        });
 
 
     }

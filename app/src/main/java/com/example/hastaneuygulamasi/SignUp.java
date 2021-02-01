@@ -45,7 +45,6 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
     public void Register(View view) {
-        System.out.println("kerem");
         userID=userNameTextView.getText().toString();
         email=EmailText.getText().toString();
         password = Password.getText().toString();
@@ -58,30 +57,35 @@ public class SignUp extends AppCompatActivity {
             }
         }
         final String username = userName;
-        mAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                reference.child("users").child("username").setValue(username).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            System.out.println("Fatih");
-                           // reference.child("users").child("citizenID").child(userID).child("email").setValue(email);
-                            Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SignUp.this, MainActivity.class);
-                            intent.putExtra("email", email);
-                            startActivity(intent);
-                            finish();
+        if(!email.equals("")&&!password.equals("")){
+            mAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                @Override
+                public void onSuccess(AuthResult authResult) {
+                    reference.child("users").child("username").setValue(username).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                System.out.println("Fatih");
+                                // reference.child("users").child("citizenID").child(userID).child("email").setValue(email);
+                                Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                intent.putExtra("email", email);
+                                startActivity(intent);
+                                finish();
+                            }
                         }
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignUp.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
-            }
-        });
+                    });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(SignUp.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else
+            Toast.makeText(SignUp.this,"Please Fill the Blanks...",Toast.LENGTH_LONG).show();
+
     }
     public void Back(View view){
         Intent intent = new Intent(SignUp.this, LogInScreen.class);

@@ -62,19 +62,24 @@ public class LogInScreen extends AppCompatActivity {
     public void SignIn(View view){
         String email=emailTextView.getText().toString();
         String password=passwordTextView.getText().toString();
-        firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {//email ve şifre ile kullanıcı oluşturuldu
-            @Override
-            public void onSuccess(AuthResult authResult) {// başarılı olursa
-                Intent intent = new Intent(LogInScreen.this, MainActivity.class);
-                startActivity(intent);
-                finish();// intentten çıkış yapmayı sağlıyor
-            }
-        }).addOnFailureListener(new OnFailureListener() {// başarısız olursa
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LogInScreen.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
-            }
-        });
+        if(!email.equals("")&&!password.equals("")){
+            firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {//email ve şifre ile kullanıcı oluşturuldu
+                @Override
+                public void onSuccess(AuthResult authResult) {// başarılı olursa
+                    Intent intent = new Intent(LogInScreen.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();// intentten çıkış yapmayı sağlıyor
+                }
+            }).addOnFailureListener(new OnFailureListener() {// başarısız olursa
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(LogInScreen.this,e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else
+            Toast.makeText(LogInScreen.this,"Please Fill the Blanks...",Toast.LENGTH_LONG).show();
+
     }
     public void SignUp(View view){
         Intent intent = new Intent(LogInScreen.this, SignUp.class);
